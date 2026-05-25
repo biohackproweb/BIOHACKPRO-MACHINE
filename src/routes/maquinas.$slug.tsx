@@ -10,6 +10,7 @@ import { imageForMachine } from "@/lib/images";
 import { GoldButton } from "@/components/gold-button";
 import { MachineCard } from "@/components/machine-card";
 import { MachineImage } from "@/components/machine-image";
+import { MachineDetailSections } from "@/components/machine-detail-sections";
 
 export const Route = createFileRoute("/maquinas/$slug")({
   head: ({ params }) => {
@@ -112,6 +113,11 @@ function MachinePage() {
             >
               {family.name}
             </Link>
+            {machine.content?.badge && (
+              <p className="mt-4 inline-block border border-primary/40 bg-primary/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-primary">
+                {machine.content.badge}
+              </p>
+            )}
             <h1 className="font-display mt-4 text-4xl font-bold uppercase leading-[0.95] tracking-tight md:text-6xl">
               {machine.name}
             </h1>
@@ -208,6 +214,14 @@ function MachinePage() {
             </div>
           </motion.div>
         </div>
+
+        {machine.content && (
+          <MachineDetailSections
+            machineName={machine.name}
+            slug={machine.slug}
+            content={machine.content}
+          />
+        )}
       </section>
 
       {/* Related */}

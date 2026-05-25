@@ -27,6 +27,24 @@ export interface Spec {
   value: string;
 }
 
+export interface MachineBenefit {
+  title: string;
+  text: string;
+}
+
+/** Contenido ampliado opcional para fichas de producto */
+export interface MachineContent {
+  badge?: string;
+  lead?: string;
+  paragraphs?: string[];
+  pillars?: string[];
+  businessBenefits?: MachineBenefit[];
+  sectorsTitle?: string;
+  sectors?: string[];
+  /** Nombres de archivo en src/assets (sin ruta), p. ej. cryo-paradox-1.png */
+  gallery?: string[];
+}
+
 export interface Machine {
   slug: string;
   name: string;
@@ -38,6 +56,7 @@ export interface Machine {
   specs: Spec[];
   highlights: string[];
   featured?: boolean;
+  content?: MachineContent;
 }
 
 export const FAMILIES: Family[] = [
@@ -122,18 +141,55 @@ export const MACHINES: Machine[] = [
     name: "CRYO PARADOX",
     family: "crioterapia",
     tier: "flagship",
-    tagline: "Cabina eléctrica de crioterapia cuerpo completo",
+    tagline: "Cabina eléctrica de crioterapia de cuerpo completo",
     description:
-      "Cabina eléctrica de última generación para crioterapia de cuerpo completo. Tecnología seca sin nitrógeno líquido, control térmico de precisión y experiencia de usuario premium.",
+      "Con PARADOX® redefinimos la crioterapia de cuerpo completo: la primera cabina eléctrica de segunda generación que activa los mecanismos fisiológicos de manera más segura, eficiente y accesible para todos.",
     priceFrom: 89000,
     specs: [
       { label: "Tipo", value: "Cabina eléctrica" },
       { label: "Temperatura", value: "−110 ºC" },
       { label: "Sesión", value: "2–3 min" },
       { label: "Tecnología", value: "Sin nitrógeno líquido" },
+      { label: "Origen", value: "Fabricada en Alemania" },
+      { label: "Control", value: "Tecnología IA · Monitoreo 24/7" },
     ],
-    highlights: ["Recuperación deportiva", "Antiinflamatorio sistémico", "Longevidad"],
+    highlights: [
+      "Recuperación deportiva",
+      "Medicina preventiva",
+      "Biohacking",
+      "Wellness premium",
+    ],
     featured: true,
+    content: {
+      badge: "Fabricada en Alemania con tecnología IA",
+      lead: "El futuro de la crioterapia ya está aquí",
+      pillars: [
+        "Sin complicaciones, sin consumos extremos, sin límites",
+        "Mantenimiento online y monitoreo 24/7 de la correcta funcionalidad",
+      ],
+      businessBenefits: [
+        { title: "Eficiencia", text: "Sin costes de instalación" },
+        { title: "Rentabilidad", text: "Rápido retorno de la inversión" },
+        { title: "Control", text: "Mantenimiento online 24/7" },
+        { title: "Innovación", text: "Diferenciación competitiva" },
+      ],
+      sectorsTitle: "¿En qué sectores se puede instalar?",
+      sectors: [
+        "Longevidad y medicina preventiva",
+        "Recuperación y rendimiento deportivo",
+        "Biohacking y optimización humana",
+        "Wellness y bienestar integral",
+        "Antiaging",
+      ],
+      gallery: [
+        "cryoparadox2.jpg",
+        "cryoparadox3.jpg",
+        "cryoparadox4.jpg",
+        "cryoparadox5.jpg",
+        "cryoparadox6.jpg",
+        "cryoparadox7.jpg",
+      ],
+    },
   },
   {
     slug: "sensocryo",
