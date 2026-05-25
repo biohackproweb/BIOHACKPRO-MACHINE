@@ -3,6 +3,7 @@ import imgCryo from "@/assets/machine-cryo.jpg";
 import imgHyperbaric from "@/assets/machine-hyperbaric.jpg";
 import imgRedlight from "@/assets/machine-redlight.jpg";
 import imgPlatform from "@/assets/machine-platform.jpg";
+import imgSensocryo from "@/assets/sensocryo.png";
 import type { FamilySlug } from "@/data/catalog";
 
 export const heroImage = heroLab;
@@ -24,6 +25,7 @@ export const imageForFamily = (family: FamilySlug) => familyMap[family];
 export const imageForMachine = (slug: string, family: FamilySlug) => {
   // Specific overrides for flagship machines
   if (slug === "cryo-paradox") return imgCryo;
+  if (slug === "sensocryo") return imgSensocryo;
   if (slug.startsWith("nexgen-o2")) return imgHyperbaric;
   if (slug.startsWith("nexgen-red") || slug === "photon-red-t-3000") return imgRedlight;
   if (slug === "qvita") return imgPlatform;
