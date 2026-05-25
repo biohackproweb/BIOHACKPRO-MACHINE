@@ -9,6 +9,7 @@ import {
 import { imageForMachine } from "@/lib/images";
 import { GoldButton } from "@/components/gold-button";
 import { MachineCard } from "@/components/machine-card";
+import { MachineImage } from "@/components/machine-image";
 
 export const Route = createFileRoute("/maquinas/$slug")({
   head: ({ params }) => {
@@ -88,13 +89,12 @@ function MachinePage() {
             transition={{ duration: 0.8 }}
             className="relative aspect-[4/5] overflow-hidden border border-border/60 bg-surface lg:sticky lg:top-32 lg:self-start"
           >
-            <img
+            <MachineImage
               src={imageForMachine(machine.slug, machine.family)}
               alt={machine.name}
-              className="size-full object-cover"
             />
             {machine.tier === "flagship" && (
-              <span className="absolute left-5 top-5 border border-primary/60 bg-background/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.24em] text-primary backdrop-blur">
+              <span className="pointer-events-none absolute left-5 top-5 z-10 border border-primary/60 bg-background/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.24em] text-primary backdrop-blur">
                 Flagship
               </span>
             )}
