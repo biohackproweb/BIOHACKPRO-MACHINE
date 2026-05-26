@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { MachineContent } from "@/data/catalog";
-import { MachineImage } from "@/components/machine-image";
 import { galleryImageForMachine } from "@/lib/images";
+import { MachineGallery } from "@/components/machine-gallery";
 
 type MachineDetailSectionsProps = {
   machineName: string;
@@ -108,24 +108,7 @@ export function MachineDetailSections({
           <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
             Galería
           </p>
-          <div
-            className={`mt-8 grid gap-4 ${
-              galleryUrls.length === 1
-                ? "max-w-2xl"
-                : galleryUrls.length === 2
-                  ? "sm:grid-cols-2"
-                  : "sm:grid-cols-2 lg:grid-cols-3"
-            }`}
-          >
-            {galleryUrls.map((src, i) => (
-              <div
-                key={src}
-                className="relative aspect-[4/3] overflow-hidden border border-border/60 bg-background"
-              >
-                <MachineImage src={src} alt={`${machineName} — imagen ${i + 1}`} />
-              </div>
-            ))}
-          </div>
+          <MachineGallery urls={galleryUrls} machineName={machineName} />
         </motion.section>
       )}
     </div>
