@@ -68,7 +68,11 @@ function FamilyPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-8 grid gap-12 md:grid-cols-[1.4fr_1fr] md:items-end"
+            className={
+              family.slug === "crioterapia"
+                ? "mt-8 grid gap-10 md:grid-cols-[1fr_1.15fr] md:items-center lg:gap-14"
+                : "mt-8 grid gap-12 md:grid-cols-[1.4fr_1fr] md:items-end"
+            }
           >
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
@@ -81,18 +85,26 @@ function FamilyPage() {
                 {family.description}
               </p>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden border border-border/60">
+            <div
+              className={
+                family.slug === "crioterapia"
+                  ? "relative aspect-[5/4] min-h-[260px] overflow-hidden border border-border/60 sm:min-h-[300px] md:aspect-[4/3] md:min-h-[360px] lg:min-h-[420px]"
+                  : "relative aspect-[4/3] overflow-hidden border border-border/60"
+              }
+            >
               <img
                 src={imageForFamily(family.slug)}
                 alt={family.name}
                 loading="lazy"
                 className={
                   family.slug === "crioterapia"
-                    ? "size-full object-contain p-8 md:p-12"
+                    ? "size-full object-contain p-1 sm:p-2 md:p-3"
                     : "size-full object-cover"
                 }
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              {family.slug !== "crioterapia" && (
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              )}
             </div>
           </motion.div>
         </div>

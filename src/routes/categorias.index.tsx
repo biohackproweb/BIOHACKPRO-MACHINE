@@ -60,7 +60,7 @@ function CategoriesPage() {
                       loading="lazy"
                       className={
                         f.slug === "crioterapia"
-                          ? "size-full object-contain p-6 opacity-70 transition-all duration-[1200ms] group-hover:scale-105 group-hover:opacity-90 md:p-8"
+                          ? "size-full object-contain p-2 opacity-80 transition-all duration-[1200ms] group-hover:scale-[1.03] group-hover:opacity-95 sm:p-3"
                           : "size-full object-cover opacity-50 transition-all duration-[1200ms] group-hover:scale-105 group-hover:opacity-80"
                       }
                     />
