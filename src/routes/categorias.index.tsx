@@ -58,7 +58,11 @@ function CategoriesPage() {
                       src={imageForFamily(f.slug)}
                       alt={f.name}
                       loading="lazy"
-                      className="size-full object-cover opacity-50 transition-all duration-[1200ms] group-hover:scale-105 group-hover:opacity-80"
+                      className={
+                        f.slug === "crioterapia"
+                          ? "size-full object-contain p-6 opacity-70 transition-all duration-[1200ms] group-hover:scale-105 group-hover:opacity-90 md:p-8"
+                          : "size-full object-cover opacity-50 transition-all duration-[1200ms] group-hover:scale-105 group-hover:opacity-80"
+                      }
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-7">

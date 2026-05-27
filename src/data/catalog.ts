@@ -219,51 +219,120 @@ export const MACHINES: Machine[] = [
     name: "NEXGEN POLAR CORE",
     family: "crioterapia",
     tier: "complementary",
-    tagline: "Cold Plunge AIO acrílico",
+    tagline: "Crioterapia y compresión para recuperación diaria",
     description:
-      "Baño de inmersión fría todo-en-uno con cuba acrílica, refrigeración integrada de 1 HP y temperatura sostenida a 3 ºC.",
+      "La unidad esencial diseñada para la recuperación diaria, uso doméstico y postoperatorios. Portabilidad y facilidad de uso sin configuraciones complejas.",
     priceFrom: 7490,
     specs: [
-      { label: "Material", value: "Acrílico" },
-      { label: "Temperatura", value: "3 ºC" },
-      { label: "Refrigeración", value: "1 HP" },
-      { label: "Medidas", value: "195 × 80 × 71 cm" },
+      {
+        label: "Tipo de terapia",
+        value: "Crioterapia continua combinada con compresión neumática básica",
+      },
+      {
+        label: "Rango de presión",
+        value: "Presión estática fija o preajustada (Baja / Media)",
+      },
+      {
+        label: "Control de temperatura",
+        value: "Flujo constante de agua helada mediante circuito integrado estándar",
+      },
+      {
+        label: "Interfaz de usuario",
+        value: "Panel táctil minimalista con indicadores LED fijos",
+      },
+      {
+        label: "Conectividad",
+        value: "1 puerto de acople rápido para manguera de un solo canal",
+      },
+      {
+        label: "Accesorios incluidos",
+        value: "Funda anatómica estándar (Rodilla o almohadilla Universal)",
+      },
+      {
+        label: "Uso principal",
+        value: "Hogar, fisioterapia de mantenimiento y rehabilitación postoperatoria doméstica",
+      },
     ],
-    highlights: ["AIO integrado", "Instalación rápida"],
+    highlights: ["Uso doméstico", "Portabilidad", "Postoperatorio"],
   },
   {
     slug: "nexgen-polar-elite",
     name: "NEXGEN POLAR ELITE",
     family: "crioterapia",
     tier: "complementary",
-    tagline: "Cold Plunge AIO cedro y acero",
+    tagline: "Estándar clínico con compresión programable",
     description:
-      "Versión premium del cold plunge con cuba de madera de cedro y acero inoxidable. Construcción artesanal y estética spa.",
+      "El estándar clínico diseñado para centros de fisioterapia y deportistas exigentes. Sensores digitales avanzados para optimizar el drenaje linfático con precisión.",
     priceFrom: 9590,
     specs: [
-      { label: "Material", value: "Cedro / Acero" },
-      { label: "Temperatura", value: "3 ºC" },
-      { label: "Refrigeración", value: "1 HP" },
-      { label: "Medidas", value: "200 × 84 × 75 cm" },
+      {
+        label: "Tipo de terapia",
+        value: "Crioterapia de alta precisión con compresión neumática activa programable",
+      },
+      { label: "Rango de presión", value: "Regulable de 15 a 75 mmHg" },
+      {
+        label: "Control de temperatura",
+        value: "Sensor de control dinámico digital en tiempo real",
+      },
+      {
+        label: "Interfaz de usuario",
+        value: "Pantalla táctil interactiva a color con lectura digital de datos",
+      },
+      {
+        label: "Conectividad",
+        value: "1 puerto de acople rápido de alta resistencia para manguera reforzada",
+      },
+      {
+        label: "Accesorios incluidos",
+        value: "Fundas ergonómicas texturizadas de alta transferencia térmica",
+      },
+      {
+        label: "Uso principal",
+        value: "Clínicas de fisioterapia, medicina deportiva y centros de alto rendimiento",
+      },
     ],
-    highlights: ["Estética spa", "Madera de cedro"],
+    highlights: ["Control digital", "Drenaje linfático", "Uso clínico"],
   },
   {
     slug: "nexgen-polar-nba",
     name: "NEXGEN POLAR NBA",
     family: "crioterapia",
     tier: "complementary",
-    tagline: "Cold Plunge AIO 0 ºC grado profesional",
+    tagline: "Crioterapia intensiva bilateral · grado profesional",
     description:
-      "Modelo de máximo rendimiento para uso intensivo. Llega a 0 ºC con refrigeración reforzada de 1–2 HP. Diseñado para clubes deportivos de élite.",
+      "La joya de la corona. Equipo de potencia industrial certificado bajo las exigencias del baloncesto profesional y los viajes constantes de las franquicias de élite.",
     priceFrom: 10590,
     specs: [
-      { label: "Material", value: "Cedro / Acero" },
-      { label: "Temperatura", value: "0 ºC" },
-      { label: "Refrigeración", value: "1–2 HP" },
-      { label: "Medidas", value: "200 × 84 × 75 cm" },
+      {
+        label: "Tipo de terapia",
+        value: "Crioterapia intensiva acelerada con compresión neumática activa bilateral",
+      },
+      {
+        label: "Rango de presión",
+        value: "Regulable de 15 a 75 mmHg con motor de compresión de alta potencia",
+      },
+      {
+        label: "Control de temperatura",
+        value: "Doble bomba de flujo continuo acelerado para enfriamiento masivo inmediato",
+      },
+      {
+        label: "Interfaz de usuario",
+        value: "Pantalla táctil avanzada con software inteligente y perfiles de atletas pregrabados",
+      },
+      {
+        label: "Conectividad",
+        value: "2 puertos simultáneos (conexión dual) para tratamiento en dos zonas",
+      },
+      {
+        label: "Accesorios incluidos",
+        value: "Botas de pierna doble grado militar + maletín rígido con ruedas de transporte",
+      },
+      {
+        label: "Uso principal",
+        value: "Vestuarios profesionales, banquillos en competición y recuperación en ruta",
+      },
     ],
-    highlights: ["Uso profesional intensivo", "0 ºC sostenidos"],
+    highlights: ["Conexión dual", "Equipos NBA", "Recuperación en ruta"],
   },
 
   // ───── Hiperbáricas ─────

@@ -86,7 +86,11 @@ function FamilyPage() {
                 src={imageForFamily(family.slug)}
                 alt={family.name}
                 loading="lazy"
-                className="size-full object-cover"
+                className={
+                  family.slug === "crioterapia"
+                    ? "size-full object-contain p-8 md:p-12"
+                    : "size-full object-cover"
+                }
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
             </div>

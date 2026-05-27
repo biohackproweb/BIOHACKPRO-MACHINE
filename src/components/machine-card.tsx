@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { type Machine, FAMILIES, formatPrice } from "@/data/catalog";
-import { imageForMachine } from "@/lib/images";
+import { imageForMachine, isMachineSvgImage } from "@/lib/images";
 
 export function MachineCard({ machine, index = 0 }: { machine: Machine; index?: number }) {
   const family = FAMILIES.find((f) => f.slug === machine.family);
@@ -22,7 +22,11 @@ export function MachineCard({ machine, index = 0 }: { machine: Machine; index?: 
             src={imageForMachine(machine.slug, machine.family)}
             alt={machine.name}
             loading="lazy"
-            className="size-full object-cover opacity-90 transition-all duration-[1200ms] group-hover:scale-[1.06] group-hover:opacity-100"
+            className={
+              isMachineSvgImage(machine.slug)
+                ? "size-full object-contain p-4 opacity-90 transition-all duration-[1200ms] group-hover:scale-[1.04] group-hover:opacity-100 md:p-5"
+                : "size-full object-cover opacity-90 transition-all duration-[1200ms] group-hover:scale-[1.06] group-hover:opacity-100"
+            }
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
           {machine.tier === "flagship" && (
