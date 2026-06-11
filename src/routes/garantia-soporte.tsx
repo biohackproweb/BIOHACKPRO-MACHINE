@@ -10,7 +10,7 @@ export const Route = createFileRoute("/garantia-soporte")({
         content:
           "Garantía de 1 año, formación gratuita en Barcelona, transporte e instalación profesional para todos los equipos BioHackPro.",
       },
-      { property: "og:title", content: "Garantía y soporte · BioHackPro" },
+      { property: "og:title", content: "Garantía y soporte · BioHackPro Machines" },
       {
         property: "og:description",
         content: "Garantía, formación e instalación profesional BioHackPro.",

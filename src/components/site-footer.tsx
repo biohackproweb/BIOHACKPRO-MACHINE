@@ -88,7 +88,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-border/60 pt-8 text-[11px] uppercase tracking-[0.18em] text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} BioHackPro · Longevity Lab</p>
+          <p>© {new Date().getFullYear()} BioHackPro Machines</p>
           <p>Equipamiento profesional · Distribución oficial</p>
         </div>
       </div>

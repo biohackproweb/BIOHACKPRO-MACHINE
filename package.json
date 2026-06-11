@@ -1,5 +1,6 @@
 {
   "name": "biohackpromachines",
+  "author": "BioHackPro Machines",
   "private": true,
   "sideEffects": false,
   "type": "module",

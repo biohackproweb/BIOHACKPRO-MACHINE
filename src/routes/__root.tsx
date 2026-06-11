@@ -82,7 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Catálogo profesional BioHackPro: crioterapia, cámaras hiperbáricas, fotobiomodulación, hipoxia, PEMF y más. Tecnología de longevidad y recuperación para clínicas y centros wellness.",
       },
-      { name: "author", content: "BioHackPro" },
+      { name: "author", content: "BioHackPro Machines" },
+      { name: "application-name", content: "BioHackPro Machines" },
       { name: "theme-color", content: "#0a0908" },
       { property: "og:title", content: "BioHackPro Machines" },
       {

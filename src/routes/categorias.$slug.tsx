@@ -17,7 +17,7 @@ export const Route = createFileRoute("/categorias/$slug")({
       meta: [
         { title: `${family.name} · BioHackPro Machines` },
         { name: "description", content: family.description },
-        { property: "og:title", content: `${family.name} · BioHackPro` },
+        { property: "og:title", content: `${family.name} · BioHackPro Machines` },
         { property: "og:description", content: family.description },
         { property: "og:image", content: imageForFamily(family.slug) },
       ],

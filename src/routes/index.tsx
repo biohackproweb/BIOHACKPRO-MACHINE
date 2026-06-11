@@ -109,7 +109,7 @@ function Hero() {
             className="flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.32em] text-primary"
           >
             <span className="h-px w-10 bg-primary/70" />
-            BioHackPro · Longevity Lab
+            BioHackPro Machines
           </motion.p>
 
           <h1 className="font-display mt-7 text-[clamp(2.5rem,7vw,6.25rem)] font-bold uppercase leading-[0.95] tracking-tight">
