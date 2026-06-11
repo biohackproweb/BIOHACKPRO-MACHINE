@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SectionHead } from "@/components/home-sections";
 import { FAMILIES } from "@/data/catalog";
+import { buildContactWhatsAppMessage, whatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/contacto")({
@@ -48,13 +49,41 @@ function ContactPage() {
                   Solicitud enviada
                 </h3>
                 <p className="mt-4 text-muted-foreground">
-                  Te responderemos en menos de 24 horas laborables.
+                  Te hemos redirigido a WhatsApp. Si no se abrió, escríbenos al{" "}
+                  <a
+                    href={whatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    {WHATSAPP_DISPLAY}
+                  </a>
+                  .
                 </p>
               </div>
             ) : (
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = new FormData(form);
+                  const familySlug = String(data.get("family") ?? "");
+                  const familyLabel =
+                    FAMILIES.find((f) => f.slug === familySlug)?.name ??
+                    (familySlug === "varios" ? "Varias / asesoramiento integral" : "");
+
+                  const url = whatsAppUrl(
+                    buildContactWhatsAppMessage({
+                      name: String(data.get("name") ?? ""),
+                      email: String(data.get("email") ?? ""),
+                      phone: String(data.get("phone") ?? ""),
+                      company: String(data.get("company") ?? ""),
+                      family: familyLabel,
+                      message: String(data.get("message") ?? ""),
+                    }),
+                  );
+
+                  window.open(url, "_blank", "noopener,noreferrer");
                   setSent(true);
                 }}
                 className="space-y-7"
@@ -97,10 +126,10 @@ function ContactPage() {
                   type="submit"
                   className="w-full gold-gradient px-7 py-4 text-[11px] font-medium uppercase tracking-[0.22em] text-primary-foreground transition hover:shadow-gold-strong"
                 >
-                  Enviar solicitud →
+                  Enviar por WhatsApp →
                 </button>
                 <p className="text-center text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                  Respuesta en menos de 24h laborables
+                  Se abrirá WhatsApp · {WHATSAPP_DISPLAY}
                 </p>
               </form>
             )}
@@ -124,6 +153,25 @@ function ContactPage() {
                   </li>
                 ))}
               </ol>
+            </div>
+
+            <div className="border-t border-border/60 pt-10">
+              <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-primary">
+                WhatsApp directo
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Escríbenos para solicitar información, presupuesto o asesoramiento sobre equipos.
+              </p>
+              <a
+                href={whatsAppUrl(
+                  "Hola, me gustaría recibir información sobre BioHackPro Machines.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex text-sm text-primary hover:underline"
+              >
+                {WHATSAPP_DISPLAY} →
+              </a>
             </div>
 
             <div className="border-t border-border/60 pt-10">
