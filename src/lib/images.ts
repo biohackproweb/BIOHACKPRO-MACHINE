@@ -54,6 +54,21 @@ const nexgenPolarImageBySlug: Partial<Record<string, string>> = Object.fromEntri
     .filter((entry): entry is [string, string] => entry !== null),
 );
 
+/** Imagen por producto: src/assets/machines/{slug}.{jpg|png} */
+const machineAssets = import.meta.glob<string>("../assets/machines/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+const machineImageBySlug: Partial<Record<string, string>> = Object.fromEntries(
+  Object.entries(machineAssets).map(([path, url]) => {
+    const filename = path.split("/").pop() ?? "";
+    const slug = filename.replace(/\.(jpg|jpeg|png|webp)$/i, "");
+    return [slug, url];
+  }),
+);
+
 export const heroImage = heroLab;
 
 /** Imagen de portada por categoría (página y listado de familias) */
@@ -85,14 +100,15 @@ const machineFamilyFallback: Record<FamilySlug, string> = {
 export const imageForFamily = (family: FamilySlug) => familyCategoryMap[family];
 
 export const imageForMachine = (slug: string, family: FamilySlug) => {
-  // Specific overrides for flagship machines
+  // Crioterapia: overrides específicos (no usar machines/)
   if (slug === "cryo-paradox") return imgCryoParadox;
   if (slug === "sensocryo") return imgSensocryo;
   const nexgenPolar = nexgenPolarImageBySlug[slug];
   if (nexgenPolar) return nexgenPolar;
-  if (slug.startsWith("nexgen-o2")) return imgHyperbaric;
-  if (slug.startsWith("nexgen-red") || slug === "photon-red-t-3000") return imgRedlight;
-  if (slug === "qvita") return imgPlatform;
+
+  const machineImage = machineImageBySlug[slug];
+  if (machineImage) return machineImage;
+
   return machineFamilyFallback[family];
 };
 
