@@ -11,7 +11,15 @@ import imgCryoParadox4 from "@/assets/cryoparadox4.jpg";
 import imgCryoParadox5 from "@/assets/cryoparadox5.jpg";
 import imgCryoParadox6 from "@/assets/cryoparadox6.jpg";
 import imgCryoParadox7 from "@/assets/cryoparadox7.jpg";
-import imgCrioterapia from "@/assets/crioterapia.svg";
+import imgCategoryCrioterapia from "@/assets/category-crioterapia.jpg";
+import imgCategoryHiperbaricas from "@/assets/category-hiperbaricas.jpg";
+import imgCategoryFotobiomodulacion from "@/assets/category-fotobiomodulacion.jpg";
+import imgCategoryHipoxia from "@/assets/category-hipoxia.jpg";
+import imgCategoryMultitecnologia from "@/assets/category-multitecnologia.jpg";
+import imgCategoryNeuroacustica from "@/assets/category-neuroacustica.jpg";
+import imgCategoryPemf from "@/assets/category-pemf-ondas-choque.jpg";
+import imgCategoryHidrogeno from "@/assets/category-hidrogeno.jpg";
+import imgCategoryDiagnostico from "@/assets/category-diagnostico-rehabilitacion.jpg";
 import type { FamilySlug } from "@/data/catalog";
 
 const machineSvgSlugs = new Set([
@@ -50,15 +58,15 @@ export const heroImage = heroLab;
 
 /** Imagen de portada por categoría (página y listado de familias) */
 const familyCategoryMap: Record<FamilySlug, string> = {
-  crioterapia: imgCrioterapia,
-  hiperbaricas: imgHyperbaric,
-  fotobiomodulacion: imgRedlight,
-  hipoxia: imgHyperbaric,
-  multitecnologia: imgPlatform,
-  neuroacustica: imgPlatform,
-  "pemf-ondas-choque": imgPlatform,
-  hidrogeno: imgRedlight,
-  "diagnostico-rehabilitacion": imgPlatform,
+  crioterapia: imgCategoryCrioterapia,
+  hiperbaricas: imgCategoryHiperbaricas,
+  fotobiomodulacion: imgCategoryFotobiomodulacion,
+  hipoxia: imgCategoryHipoxia,
+  multitecnologia: imgCategoryMultitecnologia,
+  neuroacustica: imgCategoryNeuroacustica,
+  "pemf-ondas-choque": imgCategoryPemf,
+  hidrogeno: imgCategoryHidrogeno,
+  "diagnostico-rehabilitacion": imgCategoryDiagnostico,
 };
 
 /** Fallback para máquinas sin foto propia */
