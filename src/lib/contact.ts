@@ -2,6 +2,12 @@
 export const WHATSAPP_NUMBER = "376372235";
 export const WHATSAPP_DISPLAY = "+376 372 235";
 
+/** Horario de atención comercial — lunes a viernes */
+export const BUSINESS_HOURS = "Lunes a viernes · 9:00 – 20:00";
+export const BUSINESS_HOURS_LONG =
+  "Horario de atención: lunes a viernes de 9:00 a 20:00";
+export const BUSINESS_HOURS_SHORT = "Lunes a viernes, de 9:00 a 20:00";
+
 export function whatsAppUrl(text?: string): string {
   const base = `https://wa.me/${WHATSAPP_NUMBER}`;
   if (!text?.trim()) return base;

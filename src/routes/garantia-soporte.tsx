@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionHead } from "@/components/home-sections";
+import { BUSINESS_HOURS_LONG } from "@/lib/contact";
 
 export const Route = createFileRoute("/garantia-soporte")({
   head: () => ({
@@ -89,7 +90,7 @@ function SupportPage() {
             ¿Necesitas un presupuesto detallado?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-            Incluyendo transporte, instalación y formación para tu centro.
+            Incluyendo transporte, instalación y formación para tu centro. {BUSINESS_HOURS_LONG}.
           </p>
           <Link
             to="/contacto"

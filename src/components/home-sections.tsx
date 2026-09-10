@@ -8,6 +8,7 @@ import {
 } from "@/data/catalog";
 import { imageForMachine } from "@/lib/images";
 import { GoldButton } from "./gold-button";
+import { BUSINESS_HOURS_LONG } from "@/lib/contact";
 
 export function FlagshipShowcase() {
   const featured = featuredMachines();
@@ -245,7 +246,7 @@ export function FinalCTA() {
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
           Nuestro equipo te asesora en la selección de máquinas, layout del centro,
-          formación y puesta en marcha.
+          formación y puesta en marcha. {BUSINESS_HOURS_LONG}.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <GoldButton to="/contacto">Solicitar información</GoldButton>

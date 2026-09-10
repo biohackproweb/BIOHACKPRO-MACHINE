@@ -2,7 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SectionHead } from "@/components/home-sections";
 import { FAMILIES } from "@/data/catalog";
-import { buildContactWhatsAppMessage, whatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import {
+  buildContactWhatsAppMessage,
+  whatsAppUrl,
+  WHATSAPP_DISPLAY,
+  BUSINESS_HOURS_LONG,
+} from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/contacto")({
@@ -34,7 +39,7 @@ function ContactPage() {
           <SectionHead
             eyebrow="Solicita información"
             title="Hablemos de tu centro"
-            subtitle="Cuéntanos qué tipo de proyecto estás desarrollando. Te respondemos con una propuesta personalizada en menos de 24 horas laborables."
+            subtitle={`Cuéntanos qué tipo de proyecto estás desarrollando. ${BUSINESS_HOURS_LONG}. Te respondemos lo antes posible en horario comercial.`}
           />
         </div>
       </section>
@@ -129,7 +134,7 @@ function ContactPage() {
                   Enviar por WhatsApp →
                 </button>
                 <p className="text-center text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                  Se abrirá WhatsApp · {WHATSAPP_DISPLAY}
+                  Se abrirá WhatsApp · {WHATSAPP_DISPLAY} · {BUSINESS_HOURS_LONG}
                 </p>
               </form>
             )}
@@ -162,6 +167,7 @@ function ContactPage() {
               <p className="mt-4 text-sm text-muted-foreground">
                 Escríbenos para solicitar información, presupuesto o asesoramiento sobre equipos.
               </p>
+              <p className="mt-2 text-sm text-foreground/80">{BUSINESS_HOURS_LONG}</p>
               <a
                 href={whatsAppUrl(
                   "Hola, me gustaría recibir información sobre BioHackPro Machines.",

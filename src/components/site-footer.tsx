@@ -1,5 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { FAMILIES } from "@/data/catalog";
+import {
+  BUSINESS_HOURS,
+  BUSINESS_HOURS_SHORT,
+  whatsAppUrl,
+  WHATSAPP_DISPLAY,
+} from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -19,6 +25,10 @@ export function SiteFooter() {
               Catálogo profesional de tecnologías de longevidad, recuperación y
               rendimiento para clínicas, centros wellness y profesionales.
             </p>
+            <p className="mt-5 text-[10px] font-medium uppercase tracking-[0.22em] text-primary">
+              Horario
+            </p>
+            <p className="mt-2 text-sm text-foreground/85">{BUSINESS_HOURS}</p>
           </div>
 
           <div>
@@ -75,6 +85,22 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
+                  href={whatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/80 hover:text-primary transition"
+                >
+                  WhatsApp {WHATSAPP_DISPLAY}
+                </a>
+              </li>
+              <li className="text-foreground/80">
+                <span className="block text-[10px] uppercase tracking-[0.18em] text-primary">
+                  Horario
+                </span>
+                <span className="mt-1 block">{BUSINESS_HOURS_SHORT}</span>
+              </li>
+              <li>
+                <a
                   href="https://biohackpro.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -89,7 +115,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-border/60 pt-8 text-[11px] uppercase tracking-[0.18em] text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} BioHackPro Machines</p>
-          <p>Equipamiento profesional · Distribución oficial</p>
+          <p>Equipamiento profesional · {BUSINESS_HOURS}</p>
         </div>
       </div>
     </footer>
